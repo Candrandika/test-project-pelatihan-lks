@@ -113,13 +113,15 @@
             "email": "email@gmail.com"
           }, ...
         ],
-        "questions": [
+        "questions": "questions": [
           {
-            "id": 1,
-            "question": "Question",
-            "type": "text",
-            "description" : "option description"
-          }
+            "id": 2,
+            "questions": "question",
+            "description" : "vote description",
+            "type": "select",
+            "is_required": true,
+            "options": []
+          }, ...
         ]
       }
   }
