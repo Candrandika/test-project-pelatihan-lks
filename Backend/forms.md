@@ -12,7 +12,16 @@
     "description": "Form description",
     "type": "private|public",
     "domains": ["gmail.com", "yahoo.com"], // only needed when form type = private
-    "expired": "2024-03-30"
+    "expired": "2024-03-30",
+    "questions": [
+      {
+        "question": "Question",
+        "description": "vote description",
+        "type": "text,number,checkbox,select,textarea",
+        "is_required": false,
+        "options": "option1,option2" //needed when type = checkbox / select
+      },...
+    ]
   }
   ```
 - Success Reponse
