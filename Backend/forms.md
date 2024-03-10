@@ -102,7 +102,7 @@
   ```
   ```json
   {
-    "forms": {
+    "form": {
         "name": "Form Name",
         "description" : "Form description",
         "domain": ["gmail.com", "yahoo.com"],
