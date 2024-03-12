@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Create Form</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="../assets/css/custom.css" />
+    <script src="../assets/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
+      <div class="container">
+        <a class="navbar-brand" href="#">Formify</a>
+
+        <div id="navbarsExampleDefault">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- S: Header -->
+      <header class="jumbotron">
+        <div class="container">
+          <h1 class="display-4">Create New Form</h1>
+        </div>
+      </header>
+      <!-- E: Header -->
+
+      <div class="container">
+        <form action="">
+          <section id="form-detail">
+            <div class="row mb-3">
+              <div class="col-6">
+                <label for="name">Form Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Name or Title of your form"
+                />
+              </div>
+              <div class="col-6">
+                <label for="">Form Expired</label>
+                <input type="date" class="form-control" />
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-12">
+                <label for="name">Form Description</label>
+                <textarea
+                  class="form-control"
+                  placeholder="Description of your form"
+                ></textarea>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-12">
+                <label for="">Form Type</label>
+                <select class="form-select">
+                  <option value="" selected disabled>
+                    -- select option type --
+                  </option>
+                  <option value="public">Public</option>
+                  <option value="private">Private</option>
+                </select>
+              </div>
+              <div class="col-12 mt-3">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>Domain</div>
+                  <button type="button" class="btn btn-sm btn-primary">
+                    + add domain
+                  </button>
+                </div>
+                <div class="mt-2">
+                  <div class="input-group mb-1">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="domain"
+                    />
+                    <button type="button" class="btn btn-danger">
+                      &times;
+                    </button>
+                  </div>
+                  <div class="input-group mb-1">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="domain"
+                    />
+                    <button type="button" class="btn btn-danger">
+                      &times;
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="question-list">
+            <div class="mb-3 d-flex justify-content-between align-items-center">
+              <h3>Question List</h3>
+              <button
+                type="button"
+                class="btn btn-sm btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#question-modal"
+              >
+                + question
+              </button>
+            </div>
+            <table class="table table-striped align-middle text-center">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Question</th>
+                  <th>Type</th>
+                  <th>Is Required</th>
+                  <th>Option</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>1</th>
+                  <td>Question 1</td>
+                  <td>text</td>
+                  <td>✅</td>
+                  <td>-</td>
+                  <td>
+                    <button class="btn btn-sm btn-danger" type="button">
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <th>2</th>
+                  <td>Question 2</td>
+                  <td>select</td>
+                  <td>❌</td>
+                  <td>option 1, option 2, ...</td>
+                  <td>
+                    <button class="btn btn-sm btn-danger" type="button">
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <button class="btn btn-primary mt-3">Create Form</button>
+        </form>
+      </div>
+    </main>
+    <div class="modal" tabindex="-1" id="question-modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5>Add New Question</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group mb-3">
+              <label>Question</label>
+              <input type="text" class="form-control" placeholder="Question" />
+            </div>
+            <div class="form-group mb-3">
+              <label>Type</label>
+              <select class="form-select">
+                <option value="" disabled selected>
+                  -- select question type --
+                </option>
+                <option value="text">Text</option>
+                <option value="number">Number</option>
+                <option value="checkbox">Checkbox</option>
+                <option value="select">Select</option>
+              </select>
+            </div>
+            <div class="form-group mb-3">
+              <label>Option</label>
+              <input
+                type="text"
+                placeholder="Option if type is checkbox or select. separate the option by comma (,)"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group mb-3">
+              <input type="checkbox" class="form-checkbox" />
+              <label>is required</label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">+ submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- S: Footer -->
+    <footer>
+      <div class="container">
+        <div class="text-center py-4 text-muted">
+          Copyright &copy; 2023 - Web Tech ID
+        </div>
+      </div>
+    </footer>
+    <!-- E: Footer -->
+  </body>
+</html>
